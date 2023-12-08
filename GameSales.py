@@ -65,7 +65,7 @@ if genre == '1: Popular gaming platform':
 
     # Set the 'Platform' column as category to ensure correct ordering on the x-axis
     fig.update_xaxes(type='category')
-    fig.update_layout(width=1000)
+    #fig.update_layout(width=1000)
 
     # Display the bar chart
     st.plotly_chart(fig)
@@ -123,7 +123,7 @@ elif genre == '2: Popular game genres':
                      labels={sales_column: f'Sales in {region_name} (in millions)', 'index': 'Game Genre'},
                      )
         # Set height width
-        fig.update_layout(width=600, margin=dict(l=20, r=60, t=40, b=20))
+        #fig.update_layout(width=600, margin=dict(l=20, r=60, t=40, b=20))
 
         # Display the selected bar chart
         st.plotly_chart(fig)
@@ -153,7 +153,7 @@ elif genre == '2: Popular game genres':
                          labels={'value': f'Sales Percentage', 'index': 'Game Genre'},
                          )
         # Set height width
-        fig_pie.update_layout(width=550, margin=dict(l=70, r=30, t=0, b=60))
+        #fig_pie.update_layout(width=550, margin=dict(l=70, r=30, t=0, b=60))
 
         # Display the selected pie chart
         st.plotly_chart(fig_pie)
@@ -211,7 +211,7 @@ else:
     st.subheader(f"Top 5 Games by Genre in {selected_region} from {selected_year_range[0]} to {selected_year_range[1]}")
 
     # Create two columns for the buttons
-    chart_view_button, table_view_button = st.columns([1,9])
+    chart_view_button, table_view_button = st.columns([1,5])
 
     # Add buttons to toggle between Chart view and Table view
     chart_view_clicked = chart_view_button.button("Chart View", key="chart_button", help="Switch to Chart view")
@@ -240,7 +240,7 @@ else:
                      category_orders={"Genre": top_games_by_genre['Genre'].unique()}
                      )
         # Set height width
-        fig.update_layout(height=650, width=1200)
+        #fig.update_layout(height=650, width=1200)
 
         # Display the bar chart
         st.plotly_chart(fig)
