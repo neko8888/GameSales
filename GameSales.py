@@ -162,13 +162,9 @@ elif genre == '2: Popular game genres':
     for region, sales_column in sales_column_mapping.items():
         if region == selected_region:
             # Show bar chart
-            st.subheader(
-                f"{display_option} in {selected_region} ({selected_year_range[0]} - {selected_year_range[1]}):")
             show_bar_chart(sales_column, selected_region, display_option, selected_year_range)
 
             # Show pie chart
-            st.subheader(
-                f"Percentage of {display_option} in {selected_region} ({selected_year_range[0]} - {selected_year_range[1]}):")
             show_pie_chart(sales_column, selected_region, display_option, selected_year_range)
 
 else:
