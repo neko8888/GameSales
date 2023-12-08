@@ -67,6 +67,7 @@ if genre == '1: Popular gaming platform':
     fig.update_xaxes(type='category')
     #fig.update_layout(width=1000)
 
+
     # Display the bar chart
     st.plotly_chart(fig)
 
