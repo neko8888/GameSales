@@ -158,14 +158,17 @@ elif genre == '2: Popular game genres':
         # Display the selected pie chart
         st.plotly_chart(fig_pie)
 
-    # Show bar and pie charts side by side
     # Show bar and pie charts one below the other
     for region, sales_column in sales_column_mapping.items():
         if region == selected_region:
-            # Display the bar chart
+            # Show bar chart
+            st.subheader(
+                f"{display_option} in {selected_region} ({selected_year_range[0]} - {selected_year_range[1]}):")
             show_bar_chart(sales_column, selected_region, display_option, selected_year_range)
 
-            # Display the pie chart
+            # Show pie chart
+            st.subheader(
+                f"Percentage of {display_option} in {selected_region} ({selected_year_range[0]} - {selected_year_range[1]}):")
             show_pie_chart(sales_column, selected_region, display_option, selected_year_range)
 
 else:
