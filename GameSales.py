@@ -159,18 +159,14 @@ elif genre == '2: Popular game genres':
         st.plotly_chart(fig_pie)
 
     # Show bar and pie charts side by side
+    # Show bar and pie charts one below the other
     for region, sales_column in sales_column_mapping.items():
         if region == selected_region:
-            # Use st.beta_columns to create two columns for the charts
-            col1, col2 = st.columns(2)
+            # Display the bar chart
+            show_bar_chart(sales_column, selected_region, display_option, selected_year_range)
 
-            # Display the bar chart in the first column
-            with col1:
-                show_bar_chart(sales_column, region, display_option, selected_year_range)
-
-            # Display the pie chart in the second column
-            with col2:
-                show_pie_chart(sales_column, region, display_option, selected_year_range)
+            # Display the pie chart
+            show_pie_chart(sales_column, selected_region, display_option, selected_year_range)
 
 else:
     # Open the data
